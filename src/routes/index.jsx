@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 // import Layout from '../pages/Layout';
 import Dashboard from '../pages/Dashboard';
 import Layout from '../pages/Layout';
+import ErrorPage from '../pages/ErrorPage';
 // Import other pages as needed
 
 const createRoutes = (isAuthenticated, toggleSidebar, promptAuth, isSidebarOpen) => createBrowserRouter([
@@ -13,10 +14,12 @@ const createRoutes = (isAuthenticated, toggleSidebar, promptAuth, isSidebarOpen)
       promptAuth={promptAuth}
       isSidebarOpen={isSidebarOpen}
     />,
+    errorElement : <ErrorPage />,
     children: [
       {
         index: true,
-        element: <Dashboard isAuthenticated={isAuthenticated} />
+        
+        element: <Dashboard isAuthenticated={isAuthenticated} />,
       },
       // Add more routes here
       // {
