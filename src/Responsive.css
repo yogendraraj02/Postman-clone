@@ -1,0 +1,125 @@
+/* Responsive.css */
+
+@media (max-width: 768px) {
+    .app-container {
+      flex-direction: column;
+      display: block;
+      overflow: auto;
+    }
+  
+    .main-area {
+      width: 100%;
+    }
+  
+    /* Navbar styles */
+    .navbar {
+      padding: 10px;
+      justify-content: flex-start;
+    }
+  
+    .navbar-brand {
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  
+    .search-input {
+      display: none;
+    }
+  
+    .navbar-actions {
+      margin-left: auto;
+    }
+  
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 80%;
+      max-width: 300px;
+      transform: translateX(-100%);
+      z-index: 1000;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .sidebar.open {
+      transform: translateX(0);
+    }
+  
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    .sidebar-header span {
+      display: inline-block;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  
+    /* Main content styles */
+    .main-content {
+      flex-direction: column;
+    }
+  
+    .request-response-area {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .side-panel {
+      width: 100%;
+      border-left: none;
+      border-top: 1px solid #ddd;
+    }
+  
+    /* RequestBox and ResponseBox styles */
+    .request-box, .response-box {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  
+    .request-title, .response-title {
+      font-size: 16px;
+    }
+  
+    .form-group {
+      margin-bottom: 10px;
+    }
+  
+    .button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    /* HistoryBox and CollectionBox styles */
+    .right-panel {
+      min-height: auto;
+    }
+  
+    /* Menu icon styles */
+    .menu-icon {
+      display: block;
+      /* flex-direction: column;
+      justify-content: space-around; */
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+  
+    .menu-icon div {
+      width: 30px;
+      height: 3px;
+      background: #333;
+      border-radius: 10px;
+      transition: all 0.3s linear;
+      position: relative;
+      transform-origin: 1px;
+    }
+  }

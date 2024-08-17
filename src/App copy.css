@@ -1,0 +1,313 @@
+/* App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Navbar.css */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Sidebar.css */
+.sidebar {
+  width: 250px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+}
+
+.sidebar-menu li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* MainContent.css */
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.request-response-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.side-panel {
+  width: 300px;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.box-shadow{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.box-shadow:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+/* RequestBox.css */
+.request-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  /* -webkit-box-shadow: 10px 10px 13px -7px #000000, 15px 5px 15px 5px rgba(0,0,0,0);  */
+  /* box-shadow: 10px 10px 13px -7px #000000, 15px 5px 15px 5px rgba(0,0,0,0); */
+     
+}
+
+
+
+
+.request-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.request-subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 5px;
+}
+
+.form-input,
+.form-select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+.submit-btn-group{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+
+}
+
+.button-primary {
+  background-color: black;
+  color: white;
+}
+
+/* ResponseBox.css */
+.response-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.response-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.response-status {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.response-content {
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+/* HistoryBox.css */
+.history-box {
+  margin-bottom: 30px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.history-method {
+  background-color: #e8f5e9;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* CollectionBox.css */
+.collection-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.collection-icon {
+  margin-right: 10px;
+}
+
+
+.right-panel {
+  min-height: 44%;  
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-brand {
+    font-size: 16px;
+  }
+
+  .search-input {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  .request-box, .response-box {
+    padding: 15px;
+  }
+
+  .request-title, .response-title {
+    font-size: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+}
+
