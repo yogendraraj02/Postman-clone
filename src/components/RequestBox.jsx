@@ -147,6 +147,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { makeRequest } from '../utils/api';
 import axios from 'axios';
+import { BASE_URL } from '../config';
 const isValidUrl = (url) => {
   const urlToTest = url.startsWith('http://') || url.startsWith('https://') ? url : `http://${url}`;
   try {
@@ -225,7 +226,7 @@ function RequestBox({ onResponse, onError }) {
     try {
       const requestConfig = {
         method: "POST",
-        url: 'http://localhost:5000/api/proxy', 
+        url: `${BASE_URL}/api/proxy`, 
         data: {
           method: values.method,
           url: values.url,
