@@ -5,7 +5,9 @@ function CollectionBox() {
       <div className=' box-shadow right-panel'>
         <h2 className="request-title">Collections</h2>
         <p className="request-subtitle">Manage your API collections</p>
-        <div className="collection-item">
+        <p>This feature is under development</p>
+        
+        {/* <div className="collection-item">
           <span className="collection-icon">📁</span>
           E-commerce API
         </div>
@@ -16,7 +18,7 @@ function CollectionBox() {
         <div className="collection-item">
           <span className="collection-icon">📁</span>
           Finance API
-        </div>
+        </div> */}
       </div>
     )
   }

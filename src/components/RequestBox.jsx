@@ -146,10 +146,25 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { makeRequest } from '../utils/api';
+import axios from 'axios';
+const isValidUrl = (url) => {
+  const urlToTest = url.startsWith('http://') || url.startsWith('https://') ? url : `http://${url}`;
+  try {
+    new URL(urlToTest);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
 
 const validationSchema = Yup.object().shape({
   method: Yup.string().required('Method is required'),
-  url: Yup.string().url('Invalid URL').required('URL is required'),
+  // url: Yup.string().url('Invalid URL').required('URL is required'),
+  url: Yup.string()
+  .test('is-url-valid', 'Invalid URL', isValidUrl)
+  .required('URL is required'),
+
   headers: Yup.string().test('is-json', 'Must be valid JSON', (value) => {
     if (!value) return true;
     try {
@@ -209,17 +224,21 @@ function RequestBox({ onResponse, onError }) {
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       const requestConfig = {
-        method: values.method,
-        url: values.url,
-        headers: values.headers ? JSON.parse(values.headers) : {},
-        body: values.body ? JSON.parse(values.body) : undefined,
-        queryParams: values.queryParams ? JSON.parse(values.queryParams) : undefined,
-        authType: values.authType,
-        authCredentials: values.authCredentials ? JSON.parse(values.authCredentials) : undefined,
+        method: "POST",
+        url: 'http://localhost:5000/api/proxy', 
+        data: {
+          method: values.method,
+          url: values.url,
+          headers: values.headers ? JSON.parse(values.headers) : {},
+          body: values.body ? JSON.parse(values.body) : undefined,
+          queryParams: values.queryParams ? JSON.parse(values.queryParams) : undefined,
+          authType: values.authType,
+          authCredentials: values.authCredentials ? JSON.parse(values.authCredentials) : undefined,
+        }
       };
-
-      const response = await makeRequest(requestConfig);
-      onResponse(response);
+  
+      const response = await axios(requestConfig);
+      onResponse(response.data);
     } catch (error) {
       onError(error);
     } finally {
