@@ -24,11 +24,11 @@ function Navbar({onMenuClick}) {
           <div></div>
           <div></div>
         </div>
-        <span className="navbar-brand">Postman</span>
-        <div className="navbar-actions">
+        <span className="navbar-brand">Postman-Clone</span>
+        {/* <div className="navbar-actions">
           <button className="button">+</button>
           <input type="text" placeholder="Search" className="search-input" />
-        </div>
+        </div> */}
       </nav>
     );
   }

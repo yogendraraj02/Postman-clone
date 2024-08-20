@@ -62,7 +62,7 @@ function Sidebar({ isOpen, closeSidebar, isAuthenticated, promptAuth }) {
         </ul> */}
 
         <div className="sidebar-header p-4 flex justify-between items-center">
-                <h2 className="text-xl font-bold sidebar-title">Postman</h2>
+                <h2 className="text-xl font-bold sidebar-title">Postman-Clone</h2>
                 <button onClick={closeSidebar} className="text-gray-500 hover:text-gray-700">X</button>
             </div>
             <ul className="sidebar-menu p-4">
