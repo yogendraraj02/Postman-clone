@@ -10,7 +10,7 @@ This project is a Postman-like API development and testing tool. It provides a u
   - Headers configuration
   - Body (JSON) input
   - Query params input
-  - Request Auth - Basic and B
+  - Request Auth - Basic and Bearer Token
 - Response display (with formatted and raw view)
 - Basic authentication for some specific fearures
 - Request history (Under development)
