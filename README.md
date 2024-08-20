@@ -17,14 +17,3 @@ This project is a Postman-like API development and testing tool. It provides a u
 - Collections management (Under development)
 - Environment selection (Under development)
 
-## Installation
-[Add installation instructions here]
-
-## Usage
-[Add basic usage instructions here]
-
-## Contributing
-[Add contributing guidelines if applicable]
-
-## License
-[Add license information here]
